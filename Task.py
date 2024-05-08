@@ -34,7 +34,10 @@ for line in data:
     if parsed_data['Green'] == '1':
         green_counter +=1
         green_activeTime += int(parsed_data['TimeActive'])
-        green_time += int(parsed_data['Time'])
+        #TIme format
+        h, m, s = map(int, parsed_data['Time'].split(':'))
+        time_in_seconds = h * 3600 + m * 60 + s
+        green_time += time_in_seconds
 print ("Times when all lights were active:")
 print(f"'Red' = {red_counter} ")
 print(f"'Yellow' = {yellow_counter} ")
