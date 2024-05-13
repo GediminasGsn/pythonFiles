@@ -18,13 +18,13 @@ with open(r'C:\Users\Testuotojas\Downloads\Python_task_qdev_Jnr\task\data.txt', 
     # Read all lines in the file
     data = file.readlines()
 
-# Now, 'data' is a list where each element is a line from 'filename.txt'
+# Split and format data
 for line in data:
-    # Split the line into numbers
+    # Separate data
     numbers = line.strip().split(',')
     # Combine the categories and numbers into a dictionary
     parsed_data = dict(zip(categories, numbers))
-    # If 'Red' is '1', increment the counter
+    # counter increment for each light
     if parsed_data['Red'] == '1':
         red_counter += 1
         red_activeTime += int(parsed_data['TimeActive'])
@@ -34,7 +34,7 @@ for line in data:
     if parsed_data['Green'] == '1':
         green_counter +=1
         green_activeTime += int(parsed_data['TimeActive'])
-        #TIme format
+        #Time format
         h, m, s = map(int, parsed_data['Time'].split(':'))
         time_in_seconds = h * 3600 + m * 60 + s
         green_time += time_in_seconds
