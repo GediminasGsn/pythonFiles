@@ -22,7 +22,10 @@ if y == 1:
         n = n + 1
     print("done")
     print("------------------------------------------")
-
+def hello():
+    print("hello")
+    return 1234
+print (hello())
 
 
 
